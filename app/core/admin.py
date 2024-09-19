@@ -8,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 from core import models
 
+
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
     ordering = ["id"]
@@ -31,7 +32,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             "classes": ("wide",),
-            "fields" : (
+            "fields": (
                 "email",
                 "password1",
                 "password2",
@@ -42,4 +43,6 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
+    
+    
 admin.site.register(models.User, UserAdmin)
